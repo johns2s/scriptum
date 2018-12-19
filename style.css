@@ -1,0 +1,637 @@
+/* 25px
+brand
+  colors
+    blue: #489be8 &
+    green: #6cbf84
+
+  whitespace: f8f2ee -> f2e7e0 -> cfcfcf,  fff
+  borders: cfcfcf
+  text: rgba(0, 0, 0, 0.8) / rgba(0, 0, 0, 0.9) / #fff / colored
+*/
+
+/* start init */
+
+* {
+   margin: 0;
+  padding: 0;
+  border: 0;
+  line-height: 1.6;
+  font-size: 1em;
+  font-family: "Playfair Display", serif;
+  color: rgba(0, 0, 0, 0.8);
+  overflow-wrap: break-word;
+  box-sizing: border-box;
+}
+
+img {
+  width: 100%;
+}
+
+ul {
+  margin-left: 30px;
+}
+
+h1 {
+	font-size: 1.7em;
+	font-weight: 700;
+  line-height: 1.2;
+  color: rgba(0, 0, 0, 1);
+  margin-bottom: 25px;
+  font-family: "Oswald", sans-serif;
+}
+
+h2 {
+	font-size: 1.4em;
+	font-weight: 700;
+  line-height: 1.2;
+  color: rgba(0, 0, 0, 1);
+  margin-bottom: 25px;
+  font-family: "Oswald", sans-serif;
+}
+
+h3 {
+	font-size: 1.1em;
+	font-weight: 700;
+  line-height: 1.2;
+  color: rgba(0, 0, 0, 1);
+  margin-bottom: 25px;
+  font-family: "Oswald", sans-serif;
+}
+
+p, ul {
+	font-size: 1.05em;
+	font-weight: 400;
+  margin-bottom: 25px; /*25px for paragraphs*/
+}
+
+p, input, textarea, footer, label {
+  font-size: 1.1em;
+}
+
+b, i {
+  font-family: inherit;
+}
+
+a {
+  color: #489be8;
+  text-decoration: none;
+}
+
+hr {
+  height: 1px;
+  margin: 25px 0;
+  border: 0;
+  background-color: #cfcfcf;
+}
+
+/* start the page */
+
+body {
+  background-color: #f8f2ee;
+}
+
+/* header */
+
+header {
+  height: 50px;
+  line-height: 50px;
+  padding: 0 25px;
+  border-bottom: 1px solid #cfcfcf;
+}
+
+.headerTitle {
+  font-weight: 700;
+  font-size: 1.2em;
+  height: 50px;
+  line-height: 50px;
+  display: inline-block;
+}
+
+.logo {
+  width: 26px;
+  display: inline-block;
+  margin-bottom: -4px;
+}
+
+nav {
+  float: right;
+  display: inline-block;
+  right: 0;
+  display: grid;
+  grid-template-columns: auto auto;
+  height: 50px;
+  line-height: 50px;
+  grid-gap: 15px;
+}
+
+.navLink {
+  font-size: 1.2em;
+  height: 50px;
+  line-height: 50px;
+  display: inline-block;
+}
+
+/* end header, start main page container */
+
+main {
+  padding: 50px 25px;
+}
+
+/* edit post page */
+
+.postWrap /* class of form for editing AND viewing. Who knew? */ {
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+.postEditHeader {
+  display: grid;
+  grid-template-columns: auto 90px;
+  position: sticky;
+  top: 0;
+  background-color: #f8f2ee;
+  padding-top: 25px;
+  margin-top: -50px;
+  padding-bottom: 25px;
+}
+
+.editTitle {
+  font-family: "Oswald", sans-serif;
+  font-size: 1.7em;
+  font-weight: 700;
+  color: rgba(0, 0, 0, 1);
+  background-color: transparent;
+  display: inline-block;
+  width: 100%;
+  min-width: 200px;
+  max-width: 500px;
+  border-bottom: 4px solid #cfcfcf;
+}
+
+.btn {
+  background-color: #6cbf84;
+  font-size: 1.1em;
+  color: #fff;
+  font-weight: 400;
+  font-family: "Oswald", sans-serif;
+  padding: 10px;
+  text-transform: uppercase;
+  width: 100%;
+  text-align: center;
+}
+
+.btn:hover {
+  cursor: pointer;
+}
+
+.editBody {
+  background-color: transparent;
+  display: block;
+  width: 100%;
+  resize: vertical; /* just in case JS disabled */
+  min-height: 500px;
+  overflow: auto; /* not as pretty but Scriptum still works when JS disabled */
+}
+
+/* logsign pages */
+
+label {
+  font-size: .8em;
+  font-weight: 700;
+}
+
+.logsign {
+  max-width: 350px;
+  margin: 0 auto;
+}
+
+.alert {
+  background-color: #DD6E5D;
+  color: #fff;
+  padding: 16px;
+  font-weight: 700;
+  text-align: center;
+  font-family: "Oswald", sans-serif;
+}
+
+.text {
+  display: block;
+  width: 100%;
+  padding: 8px;
+  border-bottom: 0px solid #6cbf84;
+  margin-bottom: 25px;
+  background-color: #f2e7e0;
+  border: 1px solid #cfcfcf;
+}
+
+.text:focus {
+  border-color: #489be8;
+}
+
+/* post page - toggle fun stuff! */
+.toggle {
+  position: fixed;
+  z-index: 2;
+  top: 49px;
+  right: 0;
+  width: 72px; /* 22px width + 25px padding */
+  background-color: #6cbf84;
+  padding: 14px 25px;
+}
+
+.post {
+  margin-bottom: 25px;
+}
+
+.anchor {
+  font-family: inherit;
+  color: rgba(0, 0, 0, 0.3);
+  margin-right: 8px;
+  font-weight: 400;
+  display: inline;
+}
+
+.hiddenInfo {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: -350px;
+  height: 100vh;
+  width: 350px;
+  background-color: #fff;
+  padding-bottom: 25px;
+  transition: all 0.3s ease;
+}
+
+.hIHeadA {
+  font-size: 1.1em;
+  font-weight: 700;
+  line-height: inherit;
+  color: #fff;
+  font-family: "Oswald", sans-serif;
+  display: inline-block;
+
+}
+
+.hIHead {
+  padding: 50px 25px 0;
+  height: 99px;
+  line-height: 50px;
+  background-color: #6cbf84;
+  color: #fff;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 25px;
+}
+
+.hiddenInfoContent /* sneaky little hack to get scrollbars working */ {
+  max-height: 90%;
+  overflow: auto;
+  padding: 0 25px;
+}
+
+.toggleLabel:hover {
+  cursor: pointer;
+}
+
+#toggleSidebar:checked ~ .hiddenInfo {
+  right: 0;
+  box-shadow: 0 -4px 8px 6px rgba(0, 0, 0, 0.1);
+}
+
+.inset {
+  background-color: #f8f2ee;
+  padding: 16px;
+  border: 1px solid #cfcfcf;
+  font-size: 1em;
+}
+
+.inset p {
+  font-family: inherit;
+}
+
+.stat {
+  margin: 0;
+  display: block;
+}
+
+/* user page */
+
+.userHeader {
+  display: grid;
+  grid-template-columns: auto 150px;
+  align-items: center;
+  grid-gap: 15px;
+}
+
+#tabs {
+  display: grid;
+  grid-template-columns: 75px 75px;
+  margin-bottom: 25px;
+  width: 150px;
+}
+
+.tab {
+  font-size: 1.1em;
+  font-family: "Oswald", sans-serif;
+  border-bottom: 3px solid #cfcfcf;
+  text-align: center;
+  padding: 0 3px 3px;
+  text-transform: uppercase;
+}
+
+.tab:hover {
+  cursor: pointer;
+}
+
+#tab0:checked ~ .userHeader #tabs #tab0Label {
+  border-bottom-color: #489be8;
+}
+
+#tab1:checked ~ .userHeader #tabs #tab1Label {
+  border-bottom-color: #489be8;
+}
+
+#tab0:checked ~ #posts {
+  display: block;
+}
+
+#tab0:checked ~ #about {
+  display: none;
+}
+
+#tab1:checked ~ #posts {
+  display: none;
+}
+
+#tab1:checked ~ #about {
+  display: block;
+}
+
+.postPrevWrap {
+  border: 1px solid #cfcfcf;
+}
+
+.postPrev {
+  padding: 15px;
+  display: grid;
+  grid-gap: 15px;
+  grid-template-columns: auto auto auto;
+  align-items: center;
+  background-color: #f8f2ee;
+}
+
+.postPrev2 {
+  grid-template-columns: auto auto;
+}
+
+.postPrev:nth-child(odd) {
+    background: #f2e7e0;
+}
+
+.postPrevTitle {
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.postPrevDesc {
+  margin: 0;
+  padding: 4px 0;
+}
+
+.postPrevDate {
+  margin: 0;
+  padding: 4px 8px;
+  background-color: #489be8;
+  text-align: center;
+  color: #fff;
+  font-family: "Oswald", sans-serif;
+}
+
+.listWrap {
+  display: grid;
+  grid-gap: 25px;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+.listItem {
+  background-color: #f2e7e0;
+  border: 1px solid #cfcfcf;
+  padding: 16px;
+}
+
+.listItem h3 {
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+
+.listItem p {
+  margin: 0;
+  font-size: 1em;
+}
+
+.webWrap /* user's links - social profiles, websites, businesses, etc */ {
+  display: grid;
+  grid-gap: 15px;
+  align-items: center;
+  grid-template-columns: auto auto auto;
+  max-width: 300px;
+}
+
+.webItem {
+  color: #6cbf84;
+  font-family: "Oswald", sans-serif;
+}
+
+.webItem img {
+  padding-right: 10px;
+  width: 24px;
+  vertical-align: baseline;
+}
+
+.statWrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1px;
+  background-color: #cfcfcf;
+  border: 1px solid #cfcfcf;
+  align-items: stretch;
+}
+
+.statOut {
+  text-align: center;
+  background-color: #f2e7e0;
+  padding: 16px;
+  align-items: center;
+  display: grid; /* dunno why this makes it work, but grid is awesome */
+  width: 100%;
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat h2 {
+  margin: 0;
+}
+
+.stat p {
+  margin: 0;
+}
+
+/* index page, out of order so sue me (please dont i was lying) */
+.splash {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  padding: 50px;
+  border: 1px solid #cfcfcf;
+  margin-bottom: 50px;
+  grid-gap: 50px;
+  background-color: #f2e7e0;
+}
+
+.actionWrap {
+  display: inline-grid;
+  grid-template-columns: auto auto;
+  grid-gap: 25px;
+}
+
+.actionWrap .btn, .splash p {
+  margin: 0;
+}
+
+.btnLight {
+  background-color: transparent;
+  color: rgba(0, 0, 0, 1);
+  border: 2px solid rgba(0, 0, 0, 1);
+  padding: 8px;
+}
+
+.choiceWrap {
+  display: grid;
+  grid-gap: 1px;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  margin-bottom: 50px;
+}
+
+.choice {
+  background-color: #6cbf84;
+  display: grid;
+  grid-template-columns: auto 160px;
+  align-items: center;
+  padding: 50px;
+  grid-gap: 25px;
+}
+
+.choice h2 {
+  text-transform: uppercase;
+  color: #fff;
+  margin: 0;
+}
+
+.more {
+  padding: 8px 15px;
+  font-family: "Oswald", sans-serif;
+  font-size: 1.1em;
+  color: #fff;
+  border: 2px solid #fff;
+  display: block;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.choice p {
+  grid-column: 1 / span 2;
+  color: #fff;
+  margin: 0;
+  font-weight: 700;
+  display: block;
+}
+
+.col2Wrap {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-gap: 50px;
+}
+
+/* invitation page! */
+.rInvite {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.lInvite {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.txtArea {
+  resize: vertical;
+  min-height: 200px;
+}
+
+.inviteCols {
+  background-color: transparent;
+  grid-gap: 50px;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.inviteCols div, .inviteCols form {
+  background-color: #f8f2ee;
+}
+
+footer {
+  text-align: center;
+  padding: 25px;
+}
+
+@media (min-width: 600px) and (min-height: 450px) {
+  .post p {
+    font-size: 1.18em;
+    line-height: 1.8;
+  }
+  main {
+    padding-top: 75px;
+  }
+  h1, .editTitle {
+    font-size: 2.2em;
+  }
+  h2 {
+    font-size: 1.6em
+  }
+  h3, .postPrevTitle, .hIHeadA, .more {
+    font-size: 1.3em;
+  }
+  .btn {
+    font-size: 1.3em;
+    padding: 10px 25px;
+  }
+  .splash {
+    grid-template-columns: auto auto;
+  }
+  .btnLight {
+    padding: 8px 23px;
+  }
+  .postEditHeader {
+    grid-template-columns: auto 130px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  .statWrap {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  .inviteCols {
+    background-color: #cfcfcf;
+    grid-gap: 1px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .lInvite {
+    padding-right: 25px;
+  }
+  .rInvite {
+    padding-left: 25px;
+  }
+}
