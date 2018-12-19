@@ -18,7 +18,7 @@ include("header.php");
           <li>Comment on other's posts</li>
           <li>Become part of a respected idea-sharing community where your opinion matters & connect with other thinkers</li>
         </ul>
-        <label>Responsabilities</label>
+        <label>Responsibilities</label>
         <ul style = "margin-bottom: 0">
           <li>Cite your sources: We're not in the business of creating polarised, clickbaity fake news</li>
           <li>Rate others' content</li>
